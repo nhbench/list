@@ -3,7 +3,7 @@
 #     Week 07, LIST
 #     Brother XXXXX, CS235
 # Author:
-#     <your name here>
+#     Nathan Bench, Jed Billman, Jeremy Chandler, Justin Chandler
 # Summary:
 #     <put a description here>
 # Time:

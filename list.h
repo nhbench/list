@@ -29,22 +29,22 @@ public:
 	List(List & rhs) {};
 	~List() {};
 
-	Bool empty();
+	bool empty();
 	int size();
 	void clear();
 	void push_back(T & item) throw (const char *);
 	void push_front(T & item) throw (const char *);
-	void remove(ListIterator & it) throw (const char *);
+	void remove(ListIterator<T> & it) throw (const char *);
 	T front() throw (const char *);
-	T back(); throw (const char *);
-	ListIterator insert(T & item) throw (const char *);
-	ListIterator begin() throw (const char *);
-	ListIterator rbegin();
-	ListIterator end();
-	ListIterator rend();
+	T back() throw (const char *);
+	ListIterator <T> insert(T & item) throw (const char *);
+	ListIterator <T> begin() throw (const char *);
+	ListIterator <T> rbegin();
+	ListIterator <T> end();
+	ListIterator <T> rend();
 
 private:
-
+	int l_size;
 };
 
 /************************************************
@@ -60,7 +60,7 @@ public:
 	// point to some item "p"
 	ListIterator(T * p) : p(p){};
 	// copy constructor
-	ListIterator(const ListIterator & rhs) { *this = rhs; }
+	ListIterator(const ListIterator<T> & rhs) { *this = rhs; }
 	//assignment operator
 	ListIterator & operator = (const ListIterator & rhs)
 	{
@@ -84,7 +84,7 @@ public:
 
 
 private:
-	T * p
+	T * p;
 };
 	/***********************************************
 	* COPY
@@ -217,5 +217,78 @@ private:
 
 	}
 
+	template<class T>
+	inline int List<T>::size()
+	{
+
+		return l_size;
+	}
+
+	template<class T>
+	inline void List<T>::clear()
+	{
+
+	}
+
+	template<class T>
+	inline void List<T>::push_back(T & item) throw(const char *)
+	{
+		l_size++;
+
+	}
+
+	template<class T>
+	inline void List<T>::push_front(T & item) throw(const char *)
+	{
+
+	}
+
+	template<class T>
+	inline void List<T>::remove(ListIterator<T>& it) throw(const char *)
+	{
+
+	}
+
+	template<class T>
+	inline T List<T>::front() throw(const char *)
+	{
+		return T();
+	}
+
+	template<class T>
+	inline T List<T>::back() throw(const char *)
+	{
+		return T();
+	}
+
+	template<class T>
+	inline ListIterator<T> List<T>::insert(T & item) throw(const char *)
+	{
+		return ListIterator<T>();
+	}
+
+	template<class T>
+	inline ListIterator<T> List<T>::begin() throw(const char *)
+	{
+		return ListIterator<T>();
+	}
+
+	template<class T>
+	inline ListIterator<T> List<T>::rbegin()
+	{
+		return ListIterator<T>();
+	}
+
+	template<class T>
+	inline ListIterator<T> List<T>::end()
+	{
+		return ListIterator<T>();
+	}
+
+	template<class T>
+	inline ListIterator<T> List<T>::rend()
+	{
+		return ListIterator<T>();
+	}
 
 #endif // LIST_H
